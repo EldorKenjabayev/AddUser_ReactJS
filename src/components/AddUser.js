@@ -64,7 +64,10 @@ btnSaveUser = () =>{
     let inputs = document.getElementById('inputsADDUSER');
     if(inputname.value === ''|| inputlastname.value === '' ||inputage.value === ''|| inputemail.value === '' ){
         alert('malumotlar bosh bolishi mumkin emas!!!')
-    }else{
+    }else if(inputage.value <= 0){
+        alert('Yosh 0 dan kichik bo`lishi mumkin emas!!!')
+
+    } else{
         let nevuser = {
             Name: inputname.value,
             SureName: inputlastname.value,
@@ -102,8 +105,8 @@ btnDelete = (index) =>{
                 </button><br />
                 <div className="inputsADDUSER " id='inputsADDUSER'
                 style={{
-                    width:'50%',
-                    height:'30vh',
+                    width:'30%',
+                    height:'25vh',
                     position:'relative',
                     display:'none',
                     justifyContent:'space-between',
